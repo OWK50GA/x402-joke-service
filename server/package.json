@@ -2,10 +2,10 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
   "type": "module",
   "bin": {
-    "contacts": "./dist/index.js"
+    "server": "./dist/index.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,6 +13,9 @@
     "dev": "nodemon --watch src --exec tsx src/index.ts",
     "start": "node dist/index.js",
     "format": "prettier --write ."
+  },
+  "engines": {
+    "node": ">=18"
   },
   "files": [
     "dist"
