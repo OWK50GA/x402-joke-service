@@ -1,5 +1,5 @@
 import { registerExactEvmScheme } from "@x402/evm/exact/client";
-import { wrapFetchWithPayment, x402Client, x402HTTPClient } from "@x402/fetch";
+import { x402Client, x402HTTPClient } from "@x402/fetch";
 import { NextRequest, NextResponse } from "next/server";
 import { privateKeyToAccount } from "viem/accounts"
 
@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
     const client = new x402Client();
     
     if (!paymentHeaderFromClient) {
-        const res = await fetch("http://localhost:3000/joke", {
+        const res = await fetch(`${apiBaseUrl}/joke`, {
             method: "GET"
         });
 
