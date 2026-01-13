@@ -1,8 +1,9 @@
-import express from "express";
+import express, { type Request, type Response } from "express";
 import { HTTPFacilitatorClient, x402ResourceServer } from "@x402/core/server";
 import { paymentMiddleware } from "@x402/express";
 import { registerExactEvmScheme } from "@x402/evm/exact/server";
 import jokeRouter from "./routes/jokes.js"
+import "dotenv"
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -51,7 +52,7 @@ app.use(
 );
 
 // Implement your route
-app.get("/weather", (req, res) => {
+app.get("/weather", (_req: Request, res: Response) => {
   res.send({
     report: {
       weather: "sunny",
