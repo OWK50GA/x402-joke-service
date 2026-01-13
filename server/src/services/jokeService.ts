@@ -13,7 +13,7 @@ export class JokeService {
       if (!response.ok) {
         throw new Error(`API error: ${response.status}`);
       }
-      const joke: Joke = await response.json();
+      const joke = await response.json();
       // const joke: Joke = {
       //   id: 12,
       //   type: "regular",
@@ -21,7 +21,7 @@ export class JokeService {
       //   punchline: "Yoooo... Punchline!"
       // }
       console.log(joke)
-      return joke;
+      return joke as Joke;
     } catch (error) {
       console.error("Error fetching joke:", error);
       throw error;
